@@ -7,7 +7,7 @@ def read_graph(graph_filename):
     # c -> p : 3
     # p -> t : 4
     # t -> p : 5
-    #graph_filename = 'gdrive/MyDrive/1 - USP/TCC/HeGAN/data/dblp/dblp_triple.dat'
+    #graph_filename = '../data/dblp/dblp_triple.dat'
 
     relations = set()
     nodes = set()
@@ -53,5 +53,5 @@ def read_embeddings(filename, n_node, n_embed):
 if __name__ == '__main__':
     n_node, n_relation, graph  = read_dblp_graph()
 
-    #embedding_matrix = read_embeddings('gdrive/MyDrive/1 - USP/TCC/HeGAN/data/dblp/rel_embeddings.txt', 6, 64)
+    #embedding_matrix = read_embeddings('../data/dblp/rel_embeddings.txt', 6, 64)
     print graph[1][1]

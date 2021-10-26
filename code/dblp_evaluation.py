@@ -12,7 +12,7 @@ class DBLP_evaluation():
     def __init__(self):
         self.author2id = {}
         self.author_num = 0
-        with open('gdrive/MyDrive/1 - USP/TCC/HeGAN/data/dblp_author_map_id.dat') as infile:
+        with open('../data/dblp_author_map_id.dat') as infile:
             for line in infile.readlines():
                 id, author = line.strip().split('\t')[:2]
                 id = int(id) - 1
@@ -25,7 +25,7 @@ class DBLP_evaluation():
         #id - label
         self.author_label = {}
         self.sample_num = 0
-        with open('gdrive/MyDrive/1 - USP/TCC/HeGAN/data/dblp_author_label.dat') as infile:
+        with open('../data/dblp_author_label.dat') as infile:
             for line in infile.readlines():
                 author, label = line.strip().split('\t')[:2]
                 author = int(author)
@@ -35,18 +35,18 @@ class DBLP_evaluation():
                 self.sample_num += 1
 
         #self.link_label = list()
-        #with open('gdrive/MyDrive/1 - USP/TCC/HeGAN/data/dblp_lp/dblp_ap.test_0.8_new') as infile:
+        #with open('../data/dblp_lp/dblp_ap.test_0.8_new') as infile:
         #    for line in infile.readlines():
         #        u, b, label = [int(item) for item in line.strip().split()]
         #        self.link_label.append([u, b, label])
 
         self.train_link_label = []
-        with open('gdrive/MyDrive/1 - USP/TCC/HeGAN/data/dblp_lp/dblp_ap.train_0.8_lr') as infile:
+        with open('../data/dblp_lp/dblp_ap.train_0.8_lr') as infile:
             for line in infile.readlines():
                 u, b, label = [int(item) for item in line.strip().split()]
                 self.train_link_label.append([u, b, label])
         self.test_link_label = []
-        with open('gdrive/MyDrive/1 - USP/TCC/HeGAN/data/dblp_lp/dblp_ap.test_0.8_new') as infile:
+        with open('../data/dblp_lp/dblp_ap.test_0.8_new') as infile:
             for line in infile.readlines():
                 u, b, label = [int(item) for item in line.strip().split()]
                 self.test_link_label.append([u, b, label])
